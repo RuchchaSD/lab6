@@ -4,19 +4,20 @@ using namespace std;
 #include <chrono>
 using namespace std::chrono;
 
-#define MAX_SIZE 100 // Maximum size of the stack
+#define MAX_SIZE 100 
 
 class Stack {
 private:
     int top;
     int arr[MAX_SIZE];
 public:
-    // Constructor
+    
     Stack() {
         top = -1;
     }
     
-    // Push operation
+
+    
     void Push(int value) {
         if (top >= MAX_SIZE - 1) {
             cout << "Error: Stack overflow\n";
@@ -25,7 +26,7 @@ public:
         arr[++top] = value;
     }
     
-    // Pop operation
+    
     void Pop() {
         if (top < 0) {
             cout << "Error: Stack underflow\n";
@@ -34,17 +35,17 @@ public:
         top--;
     }
     
-    // Returns true if stack is empty, else false
+    
     bool isEmpty() {
         return (top < 0);
     }
     
-    // Returns true if stack is full, else false
+    
     bool isFull() {
         return (top >= MAX_SIZE - 1);
     }
     
-    // Returns the element at the top of the stack
+    
     int StackTop() {
         if (isEmpty()) {
             cout << "Error: Stack is empty\n";
@@ -53,7 +54,7 @@ public:
         return arr[top];
     }
     
-    // Display the elements in the stack
+    
     void Display() {
         cout << "Stack: ";
         for (int i = 0; i <= top; i++) {
@@ -63,7 +64,7 @@ public:
     }
 };
 
-// Driver code
+
 int main() {
     auto start1 = high_resolution_clock::now();
     Stack s;
